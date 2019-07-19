@@ -1,0 +1,34 @@
+#include<iostream>
+#include<string>
+#include<cmath>
+using namespace std;
+int main()
+{
+	int n, m, k;
+	while (cin >> n >> m >> k)
+	{
+		int z = 0, ki, j = 1;
+		int a[200001], b[200001] = { 0 };
+		for (int i = 1; i <= 200000; i++)
+		{
+			cin >> ki;
+			a[i] = ki;
+			z += ki;
+			if (z > m*k)
+			{
+				z -= a[j];
+				j++;
+			}
+		}
+		for (int i=j,h=1;)
+		{
+			if (b[h] + a[i] <= k)
+			{
+				b[h] += ki;
+				break;
+			}
+		}
+	}
+	system("pause");
+	return 0;
+}

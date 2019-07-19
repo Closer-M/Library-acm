@@ -1,0 +1,46 @@
+在使用快排的时候，默认排序从小到大。
+
+sort(a, a + n);
+
+如果想要改成从大到小：
+
+using namespace std;   后面加上
+bool cmp(int x, int y)
+{
+	return x > y;
+}
+
+sort(a, a + n, cmp);
+同时后面要加上cmp
+                                                    结构体加快排的应用
+struct node
+{
+	int from, to;
+};
+node ad[150];
+bool cmp(node a, node b)
+{
+	return a.to < b.to;
+}
+
+int main() 
+{
+	int n, sum, k;
+	while (cin >> n) 
+	{
+		if (n == 0)return 0;
+		for (int i = 0; i < n; i++) 
+		{
+			cin >> ad[i].from >> ad[i].to;
+		}
+		sort(ad, ad + n, cmp);
+		k = ad[0].to; sum = 1;
+		for (int i = 1; i < n; i++)
+			if (ad[i].from >= k) 
+			{
+				sum++;
+				k = ad[i].to;
+			}
+		cout << sum << endl;
+	}
+	return 0;

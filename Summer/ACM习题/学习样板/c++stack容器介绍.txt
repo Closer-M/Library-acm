@@ -1,0 +1,78 @@
+c++stack(堆栈）是一个容器的改编，它实现了一个先进后出的数据结构（FILO）
+
+
+
+使用该容器时需要包含#include<stack>头文件；
+
+
+
+定义stack对象的示例代码如下：
+
+
+
+stack<int>s1;
+
+
+
+stack<string>s2;
+
+
+
+stack的基本操作有：
+
+
+
+1.入栈：如s.push(x);
+
+
+
+2.出栈:如 s.pop().注意：出栈操作只是删除栈顶的元素，并不返回该元素。
+
+
+
+3.访问栈顶：如s.top();
+
+
+
+4.判断栈空：如s.empty().当栈空时返回true。
+
+
+
+5.访问栈中的元素个数，如s.size（）;
+--------------------- 
+作者：chao_xun 
+来源：CSDN 
+原文：https://blog.csdn.net/chao_xun/article/details/8037420 
+版权声明：本文为博主原创文章，转载请附上博文链接！
+
+
+#include<iostream>
+
+#include<stack>
+
+using namespace std;
+
+int main(void)
+
+{
+
+	stack<double>s;//定义一个栈
+	for(int i=0;i<10;i++)
+	
+	s.push(i);
+	while(!s.empty())
+	
+{
+
+		printf("%lf\n",s.top());
+
+		s.pop();
+	
+}
+	
+cout<<"栈内的元素的个数为："<<s.size()<<endl;
+
+	return 0;
+
+}
+
